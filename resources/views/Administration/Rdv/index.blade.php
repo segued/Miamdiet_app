@@ -30,15 +30,17 @@
                         <thead>
                             <tr>
                                 <th class="cell"></th>
+                                <th class="cell"></th>
                                 <th class="cell">#</th>
-                                <th class="cell">Date</th>
-                                <th class="cell">Heure de rendez-vous</th>
                                 <th class="cell">Nom </th>
                                 <th class="cell">Prenom</th>
                                 <th class="cell">Email</th>
-                                <th class="cell">Numero</th>
-                                <th class="cell">Adresse</th>
+                                <th class="cell">Date</th>
+                                <th class="cell">Heure de rendez-vous</th>
                                 <th class="cell">Ville</th>
+                                <th class="cell">Adresse</th>
+                                <th class="cell">Numero</th>
+                                <th class="cell">Transaction</th>
                                 <th class="cell">Description</th>
                             </tr>
                         </thead>
@@ -46,17 +48,19 @@
                             <tr>
                                 @foreach ($rendezvous as $rendezvous)
                                 <td></td>
-                                <td class="cell">{{ $rendezvous->creneau->id }}</td>
-                                <td class="cell">{{ $rendezvous->creneau->date }}</td>
-                                <td class="cell">{{ $rendezvous->heure}}</td>
+                                <td></td>
+                                <td class="cell">{{ $rendezvous->id}}</td>
                                 <td class="cell">{{ $rendezvous->user->nom }}</td>
                                 <td class="cell">{{ $rendezvous->user->prenom }}</td>
                                 <td class="cell">{{ $rendezvous->user->email }}</td>
-                                <td class="cell">{{ $rendezvous->phone }}</td>
-                                <td class="cell">{{ $rendezvous->adress }}</td>
+                                <td class="cell">{{ $rendezvous->date}}</td>
+                                <td class="cell">{{ $rendezvous->heure}}</td>
                                 <td class="cell">{{ $rendezvous->ville }}</td>
+                                <td class="cell">{{ $rendezvous->adress }}</td>
+                                <td class="cell">{{ $rendezvous->numero_depot }}</td>
+                                <td class="cell">{{ $rendezvous->numero_transaction }}</td>
                                 <td class="cell">{{ $rendezvous->description }}</td>
-                                
+
                             </tr>
                                 @endforeach
                         </tbody>

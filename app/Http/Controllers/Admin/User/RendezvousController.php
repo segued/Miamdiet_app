@@ -18,10 +18,9 @@ class RendezvousController extends Controller
 
 
 
-    public function planifierRdv($id){
+    public function planifierRdv(){
         $user = Auth::user();
-        $creneau_id = $id;
-        return view('Client.userinterface.rendezvous', compact('user', 'creneau_id' ));
+        return view('Client.userinterface.rendezvous', compact('user' ));
     }
 
     public function store(Request $request){
@@ -29,11 +28,12 @@ class RendezvousController extends Controller
 
         $rdv = new Rdv();
         $rdv->user_id = $user->id;
-        $rdv->creneau_id = $request->creneau_id;
-        $rdv->ville = $request->ville;
+        $rdv->date = $request->date;
         $rdv->heure = $request->heure;
+        $rdv->ville = $request->ville;
         $rdv->adress = $request->adress;
-        $rdv->phone = $request->phone;
+        $rdv->numero_depot = $request->numero_depot;
+        $rdv->numero_transaction = $request->numero_transaction;
         $rdv->description = $request->description;
         $rdv->save();
        return redirect()->route('service')->with('success', 'Le rendez-vous a été enregistré avec succès.');

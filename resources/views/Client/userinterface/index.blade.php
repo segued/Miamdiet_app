@@ -58,9 +58,10 @@
     </section> --}}
 
     <div class="container-fluid p-0 position-relative">
-        <img src="{{ asset('miamdiet/images/bg.jpg') }}" class="img-fluid mx-auto d-block" alt="Description de l'image" style="max-width: 100%;">
+        <img src="{{ asset('miamdiet/images/bg.jpg') }}" class="img-fluid mx-auto d-block" alt="Description de l'image"
+            style="max-width: 100%;">
     </div>
-{{--
+    {{--
     <section id="home-section" class="hero">
         <div class="home-slider owl-carousel">
             <div class="slider-item" style="background-image: url({{ asset('miamdiet/images/bg.jpg') }});">
@@ -107,12 +108,12 @@
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
-                    <span class="subheading">Trouver votre equilibre alimentaire</span>
+                    <span class="subheading">Trouver votre équilibre alimentaire.</span>
                     <h2 class="mb-4">Avec <strong>Miamdiet</strong></h2>
-                    <p>Une bonne alimentation est la clé d'une santé durable et d'un bien-être optimal</p>
-                    <h3><a href="#">Prenez soins de vous</a></h3>
-                    <span class="price"> Choisissez la santé, chaque bouchée compte ! <br> <a
-                            href="{{ route('shop') }}"> Voir notre boutique</a></span>
+                    <p>Une bonne alimentation est la clé d'une santé durable et d'un bien-être optimal.</p>
+                    <h3><a href="#">Prenez soin de vous.</a></h3>
+                    <span class="price"> Choisissez la santé, chaque bouchée compte !<br>
+                        <a href="{{ route('shop') }}" class="btn btn-primary">Découvrez notre boutique.</a></span>
                     <div id="timer" class="d-flex mt-5">
                     </div>
                 </div>
@@ -142,15 +143,15 @@
                         </div>
                     </div>
                     <div class="pb-md-5">
-                        <h5>votre guichet unique pour une alimentation saine et délicieuse!</h5>
+                        <h5>Votre guichet unique pour une alimentation saine et délicieuse !</h5>
                         <p> Miamdiet est plus qu'un simple site de commerce électronique de restauration. Nous sommes
                             une équipe passionnée par la nutrition et le bien-être, et nous nous engageons à vous
                             fournir des repas délicieux et nutritifs qui correspondent à vos besoins et à vos
-                            préférences</p>
+                            préférences.</p>
                         <p>Nous proposons également des options de personnalisation pour répondre à vos besoins
                             alimentaires spécifiques, tels que les régimes végétariens, végétaliens, sans gluten ou sans
                             produits laitiers.</p>
-                        <p><a href="shop" class="btn btn-primary"> voir maintenant</a></p>
+                        <p><a href="shop" class="btn btn-primary">Voir maintenant !</a></p>
                     </div>
                 </div>
             </div>
@@ -158,33 +159,52 @@
     </section>
 
 
-    <section class="ftco-section testimony-section">
+    <section class="ftco-section testimony-section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 heading-section ftco-animate text-center">
-                    <span class="subheading">Equipe</span>
-                    <h2 class="mb-4">Savourer l'excellence, déguster l'exceptionnel : notre équipe à votre service
-                    </h2>
-                    <p>Notre équipe de restauration est composée de professionnels passionnés, travaillant main dans la
-                        main pour offrir une expérience culinaire exceptionnelle à nos clients. Chacun apporte ses
-                        compétences et son expertise au sein de nos différents services </p>
+                <div class="col-md-8 heading-section ftco-animate text-center">
+                    <span class="subheading">Notre Équipe</span>
+                    <h2 class="mb-4">Savourez l'Excellence, Dégustez l'Exceptionnel</h2>
+                    <p>Notre équipe de professionnels passionnés travaille main dans la main pour offrir une expérience culinaire exceptionnelle. Chaque membre apporte ses compétences et son expertise à nos services.</p>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="carousel-testimony owl-carousel">
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5">
-                            <div class="user-img mb-5"
-                                style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 200px; height: 200px; border-radius: 50%; background-size: cover; background-position: center; position: relative; overflow: hidden; margin: 0 auto;">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="icon-quote-left"></i>
-                                </span>
-                            </div>
-                            <div class="text text-center">
-                                <p class="mb-5 pl-4 line">Ensemble, nous formons une équipe soudée, animée par une même
-                                    passion pour l'excellence du service et la satisfaction de notre clientèle. </p>
-                                <p class="name">TEAM Miamdiet</p>
-                            </div>
+            <div class="row">
+                <!-- Item 1 -->
+                <div class="col-md-4">
+                    <div class="testimony-wrap p-4 pb-5">
+                        <div class="user-img mb-4" style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
+                            <span class="quote d-flex align-items-center justify-content-center">
+                                <i class="icon-quote-left"></i>
+                            </span>
+                        </div>
+                        <div class="text text-center">
+                            <p class="mb-4">"Ensemble, nous formons une équipe soudée, animée par une passion commune pour l'excellence du service."</p>
+                            {{-- <p class="name">Chef Marie</p> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimony-wrap p-4 pb-5">
+                        <div class="user-img mb-4" style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
+                            <span class="quote d-flex align-items-center justify-content-center">
+                                <i class="icon-quote-left"></i>
+                            </span>
+                        </div>
+                        <div class="text text-center">
+                            <p class="mb-4">"Notre engagement envers la qualité et l'innovation nous distingue dans l'industrie culinaire."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="testimony-wrap p-4 pb-5">
+                        <div class="user-img mb-4" style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
+                            <span class="quote d-flex align-items-center justify-content-center">
+                                <i class="icon-quote-left"></i>
+                            </span>
+                        </div>
+                        <div class="text text-center">
+                            <p class="mb-4">"Nous croyons fermement que la passion pour la cuisine se traduit par une expérience inoubliable."</p>
                         </div>
                     </div>
                 </div>
@@ -192,19 +212,29 @@
         </div>
     </section>
 
-    {{-- <section class="ftco-section testimony-section">
+    <section class="ftco-section testimony-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section ftco-animate text-center">
                     <span class="subheading">Temoignage</span>
                     <h2 class="mb-4">Ce qu'ils pensent de nous</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                        live the blind texts. Separated they live in</p>
+                    @if (!empty($gestionnaires))
+                    @foreach ($temoignage as $temoignage)
+                        <div class="col-md-6 col-lg-3 ftco-animate">
+                            <div class="product">
+                                <img class="img-prod"><img class="img-fluid"
+                                    src="{{ asset('storage' . $temoignage->image) }}" alt="Image du produit">
+                                <div class="overlay"></div>
+                                </img>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
+                @endif
             </div>
 
         </div>
-    </section> --}}
+    </section>
 
     <section class="ftco-section bg-light">
         <div class="container">

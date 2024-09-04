@@ -28,7 +28,6 @@
             @php
                 $total = $prix[$index] * $quantite[$index];
                 $sommeTotal += $total;
-                echo $total;
             @endphp
         </td>
 @endforeach
@@ -117,7 +116,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form><!-- END -->
+                    </form>
                 </div>
                 <div class="col-xl-5">
                     <div class="row mt-5 pt-3">
@@ -160,8 +159,8 @@
                                     <div class="col-md-12">
                                         <div class="text-center">
                                             <h5>Orange Money</h5>
-                                            <p>Numéro de transaction : <strong>+226 75 23 67 19</strong></p>
-
+                                            <p>Numéro de transaction : <strong>+226 75 23 67 18</strong><br>
+                                            <strong> Danielle Wendyam Léticia Bouda</strong></p>
                                         </div>
                                     </div>
                                 </div>

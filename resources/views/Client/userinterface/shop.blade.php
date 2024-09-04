@@ -29,7 +29,7 @@
             </div>
             <div class="row">
                 @foreach ($produits as $produit)
-                    <div class="col-md-6 col-lg-3 ftco-animate" >
+                    <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
                             <a href="{{ route('singleproduit', $produit->id) }}" class="img-prod"><img class="img-fluid"
                                     src="{{ asset('storage' . $produit->photo) }}" alt="Image du produit">
@@ -57,16 +57,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="{{route('cart.add')}}" method="post">
+                            <form action="{{ route('cart.add') }}" method="post">
                                 @csrf
                                 <div class="row ">
                                     <input type="hidden" name="id" value="{{ $produit->id }}">
                                     <input type="hidden" name="nom" value="{{ $produit->nom }}">
                                     <input type="hidden" name="prix" value="{{ $produit->prix }}">
-                                    <input type="hidden" name="quantity" value="1" min="1" class="form-label ml-4" id="qty">
+                                    <input type="hidden" name="quantity" value="1" min="1"
+                                        class="form-label ml-4" id="qty">
                                 </div>
-                                <div >
-                                    <input type="submit" class="btn btn-primary py-3 px-5 m-2"  value="Ajouter au panier"></input>
+                                <div>
+                                    <input type="submit" class="btn btn-primary py-3 px-5 m-2"
+                                        value="Ajouter au panier"></input>
                                 </div>
                             </form>
                         </div>

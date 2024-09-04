@@ -16,8 +16,7 @@
 
                             <div class="col-md-4 mb-4" >
                                     <label for="image" class="form-label">Image</label>
-                                    <input type="file" class="form-control" id="image"
-                                        placeholder="Entrer la image du temoignage" name="image">
+                                    <input type="file" class="form-control" id="image" placeholder="Entrer la image du temoignage" name="image">
                                     @error('image')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

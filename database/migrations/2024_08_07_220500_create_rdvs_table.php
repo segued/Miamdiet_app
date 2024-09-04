@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('rdvs', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class);
             $table->string('ville');
             $table->time('heure');
+            $table->date('date');
             $table->string('adress');
-            $table->string('phone');
+            $table->string('numero_depot');
+            $table->string('numero_transaction');
             $table->string('description');
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Creneau::class);
             $table->timestamps();
         });
     }

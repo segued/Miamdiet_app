@@ -35,6 +35,9 @@
     </div>
     <section class="ftco-section">
         <div class="container">
+            <div class="text-center bg-green p-4 mb-4 rounded shadow">
+                <h2>Planifier votre consultation</h2>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-xl-7 ftco-animate">
 
@@ -42,40 +45,36 @@
                         @csrf
                         @method('POST')
                         <div class="row align-items-end">
-                            <div class="col-md-6">
-                            </div>
-                            <div class="w-100"></div>
-                            <div class="col-md-12">
-                                <input type="hidden" name="creneau_id" value="{{ $creneau_id }}">
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="firstname">Nom</label>
-                                            <input type="text" class="form-control"
-                                                placeholder="Veuillez renseigner votre nom" value="{{ $user->nom }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="lastname">Prénom</label>
-                                            <input type="text" class="form-control"
-                                                placeholder="Veuillez renseigner votre prénom"
-                                                value="{{ $user->prenom }}">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ville">ville</label>
-                                    <input type="text" class="form-control" placeholder="Entrer votre ville actulle"
-                                        id="ville" name="ville">
+                            {{-- <input type="hidden" name="creneau_id" value="{{ $creneau_id }}"> --}}
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstname">Nom</label>
+                                    <input type="text" class="form-control" id="firstname" name="nom" placeholder="Veuillez renseigner votre nom" value="{{ $user->nom }}">
                                 </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastname">Prénom</label>
+                                    <input type="text" class="form-control" id="lastname" name="prenom" placeholder="Veuillez renseigner votre prénom" value="{{ $user->prenom }}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="date">Date de consultation</label>
+                                    <input type="date" class="form-control" id="date" name="date">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="heure">Choisir une heure</label>
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                         <select name="heure" id="heure" class="form-control">
-                                            <option value="">Selectionner une heure</option>
+                                            <option value="">Sélectionner une heure</option>
                                             <option value="09:00">09:00</option>
                                             <option value="10:00">10:00</option>
                                             <option value="11:00">11:00</option>
@@ -88,33 +87,43 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-100"></div>
+
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="adress">Adress</label>
-                                    <input id="adress" name="adress" type="text" class="form-control"
-                                        placeholder="Votre adresse d'habitation ou quartier de residence">
+                                    <label for="adress">Ville</label>
+                                    <input id="ville" name="ville" type="text" class="form-control" placeholder="Votre ville de résidence">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adress">Adresse</label>
+                                    <input id="adress" name="adress" type="text" class="form-control" placeholder="Votre adresse d'habitation ou quartier de résidence">
                                 </div>
                             </div>
-                            <div class="w-100"></div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="phone">Numéro de téléphone</label>
-                                    <input id="phone" name="phone" type="text" class="form-control"
-                                        placeholder="xxxxxxxxxxxx" value="{{ $user->numero }}">
+                                    <label for="depot">Numéro de dépôt</label>
+                                    <input type="text" class="form-control" id="numero_depot" name="numero_depot" placeholder="+226 xx xx xx xx">
                                 </div>
                             </div>
-                            <div class="w-100"></div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="transaction">Numéro de transaction</label>
+                                    <input id="numero_transaction" name="numero_transaction" type="text" class="form-control" placeholder="+226 xx xx xx xx" >
+                                </div>
+                            </div>
+
+
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea class="form-control" placeholder="commentaire" id="description" name="description" style="height: 100px"></textarea>
+                                    <textarea class="form-control" id="description" name="description" placeholder="Commentaire" style="height: 100px"></textarea>
                                 </div>
                             </div>
-                            <div class="w-100"></div>
+
                             <div class="col-md-12">
                                 <div class="form-group mt-4">
-                                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                                    <button type="submit" class="btn btn-primary">Planifier</button>
                                 </div>
                             </div>
                         </div>
@@ -124,41 +133,23 @@
                     <div class="row mt-5 pt-3">
                         <div class="col-md-12">
                             <div class="cart-detail p-3 p-md-4">
-                                <h3 class="billing-heading mb-4">
-                                    <strong> choisir un mode de paiment</strong>
+                                <h3 class="billing-heading mb-4 text-center">
+                                    <strong> Mode de paiment</strong>
                                 </h3>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="om" id="om"
-                                                    class="mr-2">
-                                                Orange Money</label>
-                                        </div>
+                                <div class="col-md-12">
+                                    <div class="text-center">
+                                        <h5>Orange Money</h5>
+                                        <p>Numéro de transaction : <strong>+226 75 23 67 19</strong></p>
+
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="mm" id="mm"
-                                                    class="mr-2">
-                                                Moov Money</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p><a href="#"class="btn btn-primary py-3 px-4">Effectuer le payment</a></p>
-                            </div>
                         </div>
                     </div>
                 </div> <!-- .col-md-8 -->
             </div>
         </div>
     </section> <!-- .section -->
-
-    {{-- <section>
-        <p>{{$user->nom}}</p>
-        <p>{{$user->email}}</p>
-        <p>{{$user->nom}}</p>
-    </section> --}}
 
     @include('layout.inscription')
 

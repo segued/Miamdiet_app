@@ -26,36 +26,41 @@
                 <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"
                     style="border-radius: 50%; overflow: hidden;">
                     <div style="width: 400px; height: 400px; overflow: hidden; border-radius: 50%;">
-                        <img src="{{ asset('miamdiet/images/daniel.jpg') }}" alt="Daniel"
+                        <img src="{{ asset('miamdiet/images/blog.jpg') }}" alt="Daniel"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    {{-- <a href="https://youtu.be/22wETA57O4M?si=uss0izqRJFFN2DS9"
-                        class="icon popup-vimeo d-flex justify-content-center align-items-center"
-                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                        <span class="icon-play"></span>
-                    </a> --}}
                 </div>
                 <div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
-                    <div class="heading-section-bold mb-4 mt-md-5">
-                        <div class="ml-md-0">
-                            <h1 class="mb-4">Cabinet de Nutrition & Diététique
-                                <br></h1>
-                        </div>
+                    <div class="heading-section-bold mb-4 mt-md-5 text-center">
+                        <h1 class="mb-4 font-weight-bold" style="font-size: 2.5rem; color: #2c3e50;">Cabinet de Nutrition & Diététique</h1>
                     </div>
                     <div class="pb-md-5">
-                        <h5>votre guichet unique pour une alimentation saine et délicieuse!</h5>
-                        <p> - Services de consultation & Suivi Nutritionnel🗓 <br>
-                            - Rééquilibrage alimentaire personnalisé🍊<br>
-                            - Livret de recettes saines, locales & diététiques 📖 <br>
-                            - Services de Livraison de Repas & produits diététiques📭🧋🥙🥘🍜 <br>
-                            - Jus minceurs et énergétiques 🍉🍏🍍🥭🍋🥕🥒<br> </p>
-                        <p>Nous livrons 7jrs/7 et jours fériés avec une possibilité d'abonnement hebdomadaire, mensuel ou achat ponctuel de petit déjeuner, déjeuner, dîner, salades ou salades de fruits
-                            . <br>
-                            Nos offres et services sont adaptés aux personnes diabétiques, hypertendus et tout autres maladies chroniques liées à la mauvaise alimentation
-                            </p>
-                            <h5> <strong>Valeurs : </strong> le sourire, le Bien être mental & physique de la population</h5>
-                            <h5> <strong>Vision :</strong>Changer la vie des Burkinabè à travers une Alimentation Saine, Equilibrée et qui valorise les produits du terroir.</h5>
-                        {{-- <p><a href="shop" class="btn btn-primary"> voir maintenant</a></p> --}}
+                        <h5 class="text-center font-weight-light mb-4">Votre guichet unique pour une alimentation saine et délicieuse!</h5>
+
+                        <div class="services-list mt-4">
+                            <h6 class="font-weight-bold"><strong>Nos Services :</strong></h6>
+                            <ul class="list-unstyled text-left">
+                                <li>🗓 Consultation & Suivi Nutritionnel</li>
+                                <li>🍊 Rééquilibrage alimentaire personnalisé</li>
+                                <li>📖 Livret de recettes saines, locales & diététiques</li>
+                                <li>📭 Livraison de repas & produits diététiques</li>
+                                <li>🍉🍏🍍🥭🥕 Jus minceurs et énergétiques</li>
+                            </ul>
+                        </div>
+
+                        <p class="mt-4">
+                            Nous livrons 7j/7, même les jours fériés, avec des options d'abonnement hebdomadaire ou mensuel. Commandez à la carte pour le petit déjeuner, déjeuner, dîner, salades ou salades de fruits.
+                        </p>
+                        <p>
+                            Nos offres sont adaptées aux personnes diabétiques, hypertendues et à toute autre maladie chronique liée à une mauvaise alimentation.
+                        </p>
+
+                        <div class="values-vision mt-4">
+                            <h5 class=""><strong>Valeurs :</strong> Le sourire, le bien-être mental & physique de la population.</h5>
+                            <h5 class=""><strong>Vision :</strong> Changer la vie des Burkinabè grâce à une alimentation saine, équilibrée et qui valorise les produits du terroir.</h5>
+                        </div>
+
+                        {{-- <p class="text-center mt-4"><a href="shop" class="btn btn-primary">Voir maintenant</a></p> --}}
                     </div>
                 </div>
             </div>

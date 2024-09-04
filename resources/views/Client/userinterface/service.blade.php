@@ -12,7 +12,7 @@
         </div>
     </div>
 </div>
-
+{{--
 <section class="ftco-section ftco-cart">
     <div class="container">
         @if ($creneaux->Count() > 0)
@@ -57,8 +57,21 @@
             </div>
         @endif
     </div>
-</section>
-
+</section> --}}
+<div class="container my-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2 class="display-4">Transformez Votre Santé!</h2>
+            <p class="lead">
+                Découvrez comment une consultation nutritionnelle peut vous aider à atteindre vos objectifs de santé. Que vous souhaitiez perdre du poids, gagner en énergie ou simplement mieux manger, nous sommes là pour vous accompagner.
+            </p>
+            <a href="{{ url('planifierRdv') }}" class="btn btn-primary btn-lg mb-2" >Prenez Rendez-vous</a>
+        </div>
+        <div class="col-md-6">
+            <img src="{{asset('miamdiet/images/rendez_vous.jpg')}}" alt="Consultation Nutritionnelle" class="img-fluid rounded shadow">
+        </div>
+    </div>
+</div>
 
 @include('layout.inscription')
 

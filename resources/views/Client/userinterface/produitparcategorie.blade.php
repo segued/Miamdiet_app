@@ -81,8 +81,8 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3><strong>Aucun produit de cette categorie</strong></h3>
-                <h5 class="mt-3"> Voir d'autres onglets </h5>
-                    <a href="{{ route('shop') }}" class="btn btn-black py-3 px-5 mt-3"> Bourique</a>
+                <h5 class="mt-3">Voir d'autres sections.</h5>
+                    <a href="{{ route('shop') }}" class="btn btn-black py-3 px-5 mt-3"> Boutique</a>
                     <a href="{{ route('service') }}" class="btn btn-black py-3 px-5 mt-3"> Services</a>
                     <a href="{{ route('livre.index') }}" class="btn btn-black py-3 px-5 mt-3"> Livres</a>
             </div>

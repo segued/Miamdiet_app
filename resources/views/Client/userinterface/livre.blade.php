@@ -67,8 +67,8 @@
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <h3><strong>Aucun livre disponible</strong></h3>
-                            <h5 class="mt-3"> Voir d'autres onglets </h5>
-                            <a href="{{ route('service') }}" class="btn btn-black py-3 px-5 mt-3"> Services</a>
+                            <h5 class="mt-3"> Voir d'autres rubriques </h5>
+                            <a href="{{ route('service') }}" class="btn btn-black py-3 px-5 mt-3"> Service</a>
                             <a href="{{ route('shop') }}" class="btn btn-black py-3 px-5 mt-3"> Boutique</a>
                         </div>
                     </div>

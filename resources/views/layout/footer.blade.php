@@ -83,7 +83,7 @@
                             <li><a href="tel:+22652953542"><span class="icon icon-phone"></span><span
                                         class="text">+226 52 95 35 42</span></a></li>
                             <li><a href="mailto:contact@miamdiet.com"><span class="icon icon-envelope"></span><span
-                                        class="text">contace@miamdiet.com</span></a></li>
+                                        class="text">contact@miamdiet.com</span></a></li>
                         </ul>
                     </div>
                 </div>

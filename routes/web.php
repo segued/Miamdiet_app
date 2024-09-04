@@ -98,7 +98,7 @@ Route::middleware('auth')->group(function (){
 
 
     Route::resource('rdv', RendezvousController::class);
-    Route::get('/planifierRdv/{id}', [RendezvousController::class, 'planifierRdv']);
+    Route::get('/planifierRdv', [RendezvousController::class, 'planifierRdv']);
 
 
     Route::get('/monpanier', [CheckoutController::class, 'afficherPanier'])->name('afficherPanier');
@@ -123,3 +123,9 @@ Route::middleware('auth')->group(function (){
 
 });
 
+
+
+Route::middleware(['auth'])->group(function(){
+
+
+});
