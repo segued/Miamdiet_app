@@ -32,7 +32,7 @@
                 <div class="col-md-3 d-flex">
                     <div class="info bg-white p-4">
                         <p><span>Téléphone:</span><br>
-                            <a href="tel://1234567920"> +226 75 23 67 19 <br> +226 52 95 35 42 </a>
+                            <a href="tel://1234567920"> +226 75 23 67 18 <br> +226 52 95 35 42 </a>
                         </p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
 
             <div class="row block-9">
                 <div class="col-md-6 order-md-last d-flex">
-                    <form action="#" class="bg-white p-5 contact-form shadow rounded" method="post">
+                    <form action="{{route('message.index')}}" class="bg-white p-5 contact-form shadow rounded" method="post">
                         @csrf
                         @method('POST')
                         <h5 class="text-center mb-4">Écrivez ou contactez-nous</h5>

@@ -26,6 +26,13 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    public function add_book_to_cart(Request $request)
+    {
+        Cart::instance('cart')->add($request->id, $request->titre, $request->quantity, $request->prix)
+            ->associate(Livre::class);
+        return redirect()->back();
+    }
+
     // public function remove_item($rowId){
     //     Cart::instance('cart')->remove($rowId);
     //     return redirect()->back();

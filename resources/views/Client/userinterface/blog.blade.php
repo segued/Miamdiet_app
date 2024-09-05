@@ -55,10 +55,10 @@
                             Nos offres sont adaptées aux personnes diabétiques, hypertendues et à toute autre maladie chronique liée à une mauvaise alimentation.
                         </p>
 
-                        <div class="values-vision mt-4">
+                        {{-- <div class="values-vision mt-4">
                             <h5 class=""><strong>Valeurs :</strong> Le sourire, le bien-être mental & physique de la population.</h5>
                             <h5 class=""><strong>Vision :</strong> Changer la vie des Burkinabè grâce à une alimentation saine, équilibrée et qui valorise les produits du terroir.</h5>
-                        </div>
+                        </div> --}}
 
                         {{-- <p class="text-center mt-4"><a href="shop" class="btn btn-primary">Voir maintenant</a></p> --}}
                     </div>

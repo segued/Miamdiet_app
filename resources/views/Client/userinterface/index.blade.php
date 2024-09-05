@@ -163,78 +163,189 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-8 heading-section ftco-animate text-center">
-                    <span class="subheading">Notre Équipe</span>
+                    <span class="subheading">Rencontrez Notre Équipe</span>
                     <h2 class="mb-4">Savourez l'Excellence, Dégustez l'Exceptionnel</h2>
-                    <p>Notre équipe de professionnels passionnés travaille main dans la main pour offrir une expérience culinaire exceptionnelle. Chaque membre apporte ses compétences et son expertise à nos services.</p>
+                    <p>Notre équipe passionnée travaille de concert pour vous offrir une expérience culinaire inégalée.
+                        Chaque membre apporte son savoir-faire et son expertise, garantissant une qualité exceptionnelle
+                        à chaque service.</p>
                 </div>
             </div>
             <div class="row">
                 <!-- Item 1 -->
                 <div class="col-md-4">
                     <div class="testimony-wrap p-4 pb-5">
-                        <div class="user-img mb-4" style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
+                        <div class="user-img mb-4"
+                            style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
                             <span class="quote d-flex align-items-center justify-content-center">
                                 <i class="icon-quote-left"></i>
                             </span>
                         </div>
                         <div class="text text-center">
-                            <p class="mb-4">"Ensemble, nous formons une équipe soudée, animée par une passion commune pour l'excellence du service."</p>
-                            {{-- <p class="name">Chef Marie</p> --}}
+                            <p class="mb-4">"Ensemble, nous formons une équipe soudée, animée par une passion commune
+                                pour l'excellence du service."</p>
                         </div>
                     </div>
                 </div>
+                <!-- Item 2 -->
                 <div class="col-md-4">
                     <div class="testimony-wrap p-4 pb-5">
-                        <div class="user-img mb-4" style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
+                        <div class="user-img mb-4"
+                            style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
                             <span class="quote d-flex align-items-center justify-content-center">
                                 <i class="icon-quote-left"></i>
                             </span>
                         </div>
                         <div class="text text-center">
-                            <p class="mb-4">"Notre engagement envers la qualité et l'innovation nous distingue dans l'industrie culinaire."</p>
+                            <p class="mb-4">"Notre engagement envers la qualité et l'innovation nous distingue dans
+                                l'industrie culinaire."</p>
                         </div>
                     </div>
                 </div>
-
+                <!-- Item 3 -->
                 <div class="col-md-4">
                     <div class="testimony-wrap p-4 pb-5">
-                        <div class="user-img mb-4" style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
+                        <div class="user-img mb-4"
+                            style="background-image: url({{ asset('miamdiet/images/team.jpg') }}); width: 100%; height: 250px; border-radius: 50%; background-size: cover; background-position: center;">
                             <span class="quote d-flex align-items-center justify-content-center">
                                 <i class="icon-quote-left"></i>
                             </span>
                         </div>
                         <div class="text text-center">
-                            <p class="mb-4">"Nous croyons fermement que la passion pour la cuisine se traduit par une expérience inoubliable."</p>
+                            <p class="mb-4">"Nous croyons fermement que la passion pour la cuisine se traduit par une
+                                expérience inoubliable."</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <section class="ftco-section testimony-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section ftco-animate text-center">
-                    <span class="subheading">Temoignage</span>
-                    <h2 class="mb-4">Ce qu'ils pensent de nous</h2>
-                    @if (!empty($gestionnaires))
-                    @foreach ($temoignage as $temoignage)
-                        <div class="col-md-6 col-lg-3 ftco-animate">
-                            <div class="product">
-                                <img class="img-prod"><img class="img-fluid"
-                                    src="{{ asset('storage' . $temoignage->image) }}" alt="Image du produit">
-                                <div class="overlay"></div>
-                                </img>
-                            </div>
-                        </div>
-                    @endforeach
+                    <span class="subheading">Témoignages</span>
+                    <h2 class="mb-4">Ce que nos clients en pensent</h2>
                 </div>
-                @endif
             </div>
-
+            <div class="row">
+                @foreach ($temoignages as $temoignage)
+                    <div class="col-md-3 ftco-animate">
+                        <div class="product shadow">
+                            <img class="img-fluid" src="{{ asset('storage' . $temoignage->image) }}" alt="Image du produit">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="text-center">
+                            <h6>"{{ $temoignage->description }}"</h6>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </section>
+    <style>
+        .testimony-section {
+            background-color: #f8f9fa; /* Couleur de fond douce */
+            padding: 60px 0; /* Espacement supérieur et inférieur */
+        }
+
+        .product {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .img-fluid {
+            transition: transform 0.3s; /* Effet de transition pour l'animation */
+        }
+
+        .img-fluid:hover {
+            transform: scale(1.05); /* Agrandissement au survol */
+        }
+    </style>
+
+
+    <section class="ftco-section values-vision-mission-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-7 heading-section ftco-animate text-center">
+                    <h2 class="mb-4">Nos Valeurs, Vision et Mission</h2>
+                    <p>Nous croyons fermement en l'importance de la santé et du bien-être pour tous.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 ftco-animate">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <div class="icon mb-3 ">
+                                <i class="fas fa-eye" style="font-size: 40px; color: #28a745;"></i>
+                            </div>
+                            <h3>Vision</h3>
+                            <p>Changer la vie des Burkinabè à travers une alimentation saine, équilibrée et valorisant
+                                les produits du terroir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ftco-animate">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <div class="icon mb-3">
+                                <i class="fas fa-smile" style="font-size: 40px; color: #007bff;"></i>
+                            </div>
+                            <h3>Valeurs</h3>
+                            <p><strong>Le Sourire</strong><br>Chaque sourire est le reflet d'une vie saine.</p>
+                            <p><strong>Bien-être Mental & Physique</strong><br>Promotion de la santé intégrale de la
+                                population.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ftco-animate">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <div class="icon mb-3">
+                                <i class="fas fa-check-circle" style="font-size: 40px; color: #dc3545;"></i>
+                            </div>
+                            <h3>Mission</h3>
+                            <p>Fournir des solutions complètes pour une vie saine avec une gamme diversifiée de services
+                                et de produits axés sur la nutrition et le bien-être.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .values-vision-mission-section {
+            padding: 60px 0;
+            /* Espacement supérieur et inférieur */
+        }
+
+        .card {
+            border: none;
+            /* Pas de bordure par défaut */
+            border-radius: 10px;
+            /* Coins arrondis */
+            transition: transform 0.3s, box-shadow 0.3s;
+            /* Effet de transition */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            /* Légère élévation au survol */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            /* Ombre au survol */
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            /* Espacement sous les titres */
+        }
+    </style>
+
+
+
+
+
 
     <section class="ftco-section bg-light">
         <div class="container">

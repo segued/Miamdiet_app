@@ -53,7 +53,8 @@
 
                             <div class="col-md-6">
                                 <label for="photo" class="form-label">Photo</label>
-                                <input type="file" class="form-control" id="photo" placeholder="Entrer la photo du produit" name="photo" value="{{ old('photo', $produit->photo) }}">                                @error('nom')
+                                <input type="file" class="form-control" id="photo" placeholder="Entrer la photo du produit" name="photo" value="{{ old('photo', $produit->photo) }}">
+                                @error('nom')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>

@@ -54,7 +54,9 @@
                         <table class="table app-table-hover mb-0 text-left">
                             <thead>
                                 <tr>
+                                    <th class="cell"></th>
                                     <th class="cell">#</th>
+                                    <th class="cell"> Lien vers l'image</th>
                                     <th class="cell">Description</th>
                                     <th class="cell">Action</th>
                                     <th class="cell"></th>
@@ -63,13 +65,9 @@
                             <tbody style="height: 100%; overflow-y: scroll;">
                                 @foreach ($temoignages as $temoignage)
                                     <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input">
-                                                <label class="custom-control-label"></label>
-                                            </div>
-                                        </td>
+                                        <td></td>
                                         <td>{{ $temoignage->id}}</td>
+                                        <td>{{ $temoignage->image}}</td>
                                         <td>{{ $temoignage->description }}</td>
                                         <td class="cell">
                                             <div class="d-flex justify-content-start ">
@@ -107,5 +105,27 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll("#confirmation").forEach((button) => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            Swal.fire({
+                title: "Êtes-vous sûr ?",
+                text: "De vouloir supprimer?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Oui,Supprimer!",
+                cancelButtonText: "Non",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.closest("form").submit();
+                }
+            });
+        });
+        });
+    </script>
 
 @endsection

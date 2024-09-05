@@ -154,7 +154,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="cart-detail p-3 p-md-4">
-                                <h3 class="billing-heading mb-4 text-center"><strong>Mode de paiment</strong></h3>
+                                <h3 class="billing-heading mb-4 text-center"><strong>Mode de paiement</strong></h3>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="text-center">

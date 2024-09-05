@@ -37,6 +37,7 @@ use App\Http\Controllers\Admin\Dashboard\TemoignageController;
 use App\Http\Controllers\Admin\Dashboard\GestionnaireController;
 use App\Http\Controllers\Admin\User\CartsController;
 use App\Http\Controllers\Admin\User\LivreController;
+use App\Http\Controllers\Admin\User\MessageController;
 use App\Http\Controllers\Admin\User\ProduitparcategorieController;
 use App\Http\Controllers\Admin\User\RendezvousController;
 
@@ -68,6 +69,7 @@ Route::get('/resset', [RessetpasswordController::class, 'index'])->name('resset'
 Route::put('/update', [RessetpasswordController::class, 'update'])->name('update');
 
 Route::resource('/register', RegisterController::class);
+Route::resource('/message', MessageController::class);
 Route::get('/register', [RegisterController::class, 'userlist'])->name('register');
 Route::post('/create', [RegisterController::class, 'create'])->name('create');
 
@@ -88,7 +90,7 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
-    Route::post('/cart/book', [CartController::class, 'addBookToCart'])->name('cart.book');
+    Route::post('/cart/book', [CartController::class, 'add_book_to_cart'])->name('cart.book');
     // Route::put('/cart/increase-quantity/{rowId}', [CartController::class, 'increase_cart_quantity'])->name('cart.qty.increase');
     // Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_cart_quantity'])->name('cart.qty.decrease');
     // Route::delete('/cart/remove/{rowId}',[CartController::class,'remove_item'])->name('cart.remove.item');

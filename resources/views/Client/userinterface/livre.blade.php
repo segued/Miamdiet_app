@@ -50,16 +50,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form action="{{route('cart.book')}}" method="post">
+                                {{-- <form action="{{route('cart.book')}}" method="post">
                                     @csrf
                                     <div class="row ">
                                         <input type="hidden" name="id" value="{{ $livre->id }}">
+                                        <input type="hidden" name="titre" value="{{ $livre->titre }}">
+                                        <input type="hidden" name="prix" value="{{ $livre->prix }}">
                                         <input type="hidden" name="quantity" value="1" min="1" class="form-label ml-4" id="qty">
                                     </div>
                                     <div >
                                         <input type="submit" class="btn btn-black py-3 px-5 m-2" value="Ajouter au panier"></input>
                                     </div>
-                                </form>
+                                </form> --}}
                             </div>
                         </div>
                     @endforeach
