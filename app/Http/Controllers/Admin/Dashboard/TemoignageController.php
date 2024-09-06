@@ -29,21 +29,13 @@ class TemoignageController extends Controller
         $temoignage = new Temoignage([
             'description' => $request->description,
         ]);
-        $imageBaselink = '/images/produit/';
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
-            $filename = (string) Str::uuid() . "." . strtolower($extension);
-            $file->storeAs('public/images/produit/', $filename);
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
 
-            $temoignage->image = $imageBaselink . '' . $filename;
-            $temoignage->save();
+        $temoignage->image = 'images/' . $imageName;
+        $temoignage->save();
 
-            return redirect()->route('temoignage.index')->with('success', 'Le témoignage  a été enregistré avec succès.');
-        } else {
-            return redirect()->back()->with('error_msg', 'Veuillez sélectionner une image.');
-        }
+        return redirect()->route('temoignage.index')->with('success', 'Le témoignage  a été enregistré avec succès.');
     }
 
     public function show($id)
@@ -67,23 +59,17 @@ class TemoignageController extends Controller
     public function update(Request $request, $id)
     {
 
-        $imageBaselink = '/images/produit/';
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
-            $filename = (string) Str::uuid() . "." . strtolower($extension);
-            $file->storeAs('public/images/produit/', $filename);
+        $temoignage = new Temoignage([
+            'description' => $request->description,
+        ]);
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
 
-            $temoignage = Temoignage::findOrFail($id);
-            $temoignage->image = $imageBaselink . '' . $filename;
-            $temoignage->description = $request->input('description');
-            $temoignage->update();
+        $temoignage->image = 'images/' . $imageName;
+        $temoignage->update();
 
             return redirect()->route('temoignage.index')->with('success', 'Le témoignage  a été enregistré avec succès.');
-        } else {
-            return redirect()->back()->with('error_msg', 'Veuillez sélectionner une image.');
-        }    }
+    }
 
 
     /**
@@ -94,6 +80,6 @@ class TemoignageController extends Controller
         //
         $temoignage = Temoignage::find($id);
         $temoignage->delete();
-        return view('Administration.temoignage.index')->with('success','Le temoignage a bien été supprimé');
+        return view('Administration.temoignage.index')->with('success', 'Le temoignage a bien été supprimé');
     }
 }

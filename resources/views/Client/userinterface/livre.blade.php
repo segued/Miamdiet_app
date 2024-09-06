@@ -22,7 +22,7 @@
                         <div class="col-md-6 col-lg-3 ftco-animate">
                             <div class="product">
                                 <a href="#" class="img-prod"><img class="img-fluid"
-                                        src="{{ asset('storage' . $livre->image) }}" alt="Image du livre">
+                                    src="{{ asset($livre->image) }}" alt="Image du livre">
                                     <div class="overlay"></div>
                                 </a>
                                 <div class="text py-3 pb-4 px-3 text-center">

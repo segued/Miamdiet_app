@@ -44,10 +44,10 @@
 
 
                                 <div class="col-md-4 mb-4" >
-                                    <label for="photo" class="form-label">Photo</label>
-                                    <input type="file" class="form-control" id="photo"
-                                        placeholder="Entrer la photo du produit" name="photo">
-                                    @error('nom')
+                                    <label for="image" class="form-label">Photo</label>
+                                    <input type="file" class="form-control" id="image"
+                                        placeholder="Entrer l'image du produit" name="image">
+                                    @error('image')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>

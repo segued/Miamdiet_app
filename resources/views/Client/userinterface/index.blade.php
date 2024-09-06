@@ -234,7 +234,7 @@
                 @foreach ($temoignage as $temoignage)
                     <div class="col-md-3 ftco-animate">
                         <div class="product shadow">
-                            <img class="img-fluid" src="{{ asset('storage' . $temoignage->image) }}" alt="Image du produit">
+                            <img class="img-fluid" src="{{ asset($temoignage->image) }}" alt="Image du produit">
                             <div class="overlay"></div>
                         </div>
                         <div class="text-center">

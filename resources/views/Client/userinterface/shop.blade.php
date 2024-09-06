@@ -31,8 +31,8 @@
                 @foreach ($produits as $produit)
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
-                            <a href="{{ route('singleproduit', $produit->id) }}" class="img-prod"><img class="img-fluid"
-                                    src="{{ asset('storage' . $produit->photo) }}" alt="Image du produit">
+                            <a href="{{ route('singleproduit', $produit->id) }}" class="img-prod">
+                                <img class="img-fluid" src="{{ asset($produit->image) }}" alt="Image du produit">
                                 <div class="overlay"></div>
                             </a>
                             <div class="text py-3 pb-4 px-3 text-center">

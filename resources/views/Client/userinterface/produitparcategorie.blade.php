@@ -27,7 +27,8 @@
                     @foreach ($produits as $produit)
                         <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
-                            <a href="{{route('singleproduit', $produit->id)}}" class="img-prod"><img class="img-fluid" src="{{asset('storage'.$produit->photo)}}" alt="Colorlib Template">
+                            <a href="{{route('singleproduit', $produit->id)}}" class="img-prod">
+                                <img class="img-fluid" src="{{ asset($produit->image) }}" alt="Colorlib Template">
                                 <div class="overlay"></div>
                             </a>
                             <div class="text py-3 pb-4 px-3 text-center">
@@ -41,9 +42,6 @@
                                     <div class="m-auto d-flex">
                                         <a href="{{route('singleproduit', $produit->id)}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                                             <span><i class="ion-ios-menu"></i></span>
-                                        </a>
-                                        <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                            <span><i class="ion-ios-cart"></i></span>
                                         </a>
                                         <a href="#" class="heart d-flex justify-content-center align-items-center ">
                                             <span><i class="ion-ios-heart"></i></span>
@@ -64,8 +62,8 @@
                                     <input type="hidden" name="prix" value="{{ $produit->prix }}">
                                     <input type="hidden" name="quantity" value="1" min="1" class="form-label ml-4" id="qty">
                                 </div>
-                                <div >
-                                    <input type="submit" class="btn btn-primary py-3 px-5 m-2"  value="Ajouter au panier"></input>
+                                <div>
+                                    <input type="submit" class="btn btn-primary py-1 px-3 m-2" value="Ajouter au panier">
                                 </div>
                                 </form>
                                 @endif

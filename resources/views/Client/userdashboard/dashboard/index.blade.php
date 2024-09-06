@@ -46,11 +46,13 @@
                     </div>
                 </div> <!-- .col-md-8 -->
                 <div class="container my-5">
-                    <h2 class="text-center mb-4">Informations de Facturation</h2>
+                    <h2 class="text-center mb-4">Histotique de mes achats</h2>
                     <table class="table table-bordered table-striped">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">Champ</th>
+                                <th scope="col">Détails</th>
+                                <th scope="col">Détails</th>
                                 <th scope="col">Détails</th>
                             </tr>
                         </thead>
@@ -58,26 +60,8 @@
                             <tr>
                                 <td>Prénom</td>
                                 <td>Votre prénom ici</td>
-                            </tr>
-                            <tr>
-                                <td>Nom de Famille</td>
-                                <td>Votre nom ici</td>
-                            </tr>
-                            <tr>
-                                <td>État / Pays</td>
-                                <td>Votre pays ici</td>
-                            </tr>
-                            <tr>
-                                <td>Adresse</td>
-                                <td>Numéro et nom de la rue ici</td>
-                            </tr>
-                            <tr>
-                                <td>Ville</td>
-                                <td>Votre ville ici</td>
-                            </tr>
-                            <tr>
-                                <td>Code Postal</td>
-                                <td>Votre code postal ici</td>
+                                <td>Votre prénom ici</td>
+                                <td>Votre prénom ici</td>
                             </tr>
                         </tbody>
                     </table>

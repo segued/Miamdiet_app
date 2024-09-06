@@ -20,7 +20,7 @@
 
             <div class="row">
                 <div class="col-lg-6 mb-5 ftco-animate">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('storage' . $produit->photo) }}" alt="Colorlib Template"></a>
+                    <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset($produit->image) }}" alt="Colorlib Template"></a>
                 </div>
                 <div class="col-lg-6 product-details pl-md-5 ftco-animate">
                     <h1><strong>{{ $produit->nom }}</strong></h1>

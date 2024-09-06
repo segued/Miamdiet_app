@@ -38,21 +38,13 @@ class BookController extends Controller
             'prix' => $request->prix,
             'description' => $request->description,
         ]);
-        $imageBaselink = '/images/produit/';
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
-            $filename = (string) Str::uuid() . "." . strtolower($extension);
-            $file->storeAs('public/images/produit/', $filename);
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
 
-            $livre->image = $imageBaselink . '' . $filename;
-            $livre->save();
+        $livre->image = 'images/' . $imageName;
+        $livre->save();
 
-            return redirect()->route('book.index')->with('success', 'Le livre  a été enregistré avec succès.');
-        } else {
-            return redirect()->back()->with('error_msg', 'Veuillez sélectionner une image.');
-        }
+        return redirect()->route('book.index')->with('success', 'Le livre  a été enregistré avec succès.');
     }
 
     /**
@@ -80,26 +72,17 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $imageBaselink = '/images/livre/';
-        if ($request->hasFile('photo')) {
-            $file = $request->file('photo');
-            $filename = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
-            $nouveauNomFichier = (string) Str::uuid() . "." . strtolower($extension);
-            $file->storeAs('public/images/livre/', $nouveauNomFichier);
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+        $livre = Livre::findOrFail($id);
 
-            $livre = Livre::findOrFail($id);
+        $livre->title = $request->title;
+        $livre->prix = $request->input('prix');
+        $livre->description = $request->input('description');
+        $livre->image = 'images/' . $imageName;
 
-            $livre->title = $request->title;
-            $livre->prix = $request->input('prix');
-            $livre->description = $request->input('description');
-            $livre->image = $imageBaselink . '' . $nouveauNomFichier;
-
-            $livre->update();
-            return redirect()->route('book.index')->with('success', 'Le livre a été modifier avec succès.');
-        } else {
-            return redirect()->back()->with('error_msg', 'Veuillez sélectionner une image.');
-        }
+        $livre->update();
+        return redirect()->route('book.index')->with('success', 'Le livre a été modifier avec succès.');
     }
 
     /**
