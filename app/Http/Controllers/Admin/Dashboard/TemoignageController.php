@@ -9,12 +9,9 @@ use App\Models\Temoignage;
 
 class TemoignageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
         $temoignages = Temoignage::all();
         return view('Administration.temoignage.index', compact('temoignages'));
     }

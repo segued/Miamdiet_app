@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
         $user = new User();
         $user->nom = 'SEGUEDA';
         $user->prenom = 'Kevin';
-        $user->profil = 'user';
+        $user->role = 'user';
         $user->email = 'seguedakevin@gmail.com';
         $user->password = bcrypt('12082000');
         $user->confirmationpassword = bcrypt('12082000');
@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
         $user2 = new User();
         $user2->nom = 'BESSIN';
         $user2->prenom = 'Ivan';
-        $user2->profil = 'admin';
+        $user2->role = 'admin';
         $user2->email = 'bessinivan@gmail.com';
         $user2->password = bcrypt('password');
         $user2->confirmationpassword = bcrypt('password');
@@ -39,7 +39,7 @@ class UserTableSeeder extends Seeder
         $user3 = new User();
         $user3->nom = 'BOUDA';
         $user3->prenom = 'Danielle';
-        $user3->profil = 'admin';
+        $user3->role = 'admin';
         $user3->email = 'boudadanielle@gmail.com';
         $user3->password = bcrypt('password');
         $user3->confirmationpassword = bcrypt('password');
@@ -52,7 +52,7 @@ class UserTableSeeder extends Seeder
         $user4 = new User();
         $user4->nom = 'SEGUEDA';
         $user4->prenom = 'Audrey';
-        $user4->profil = 'user';
+        $user4->role = 'user';
         $user4->email = 'seguedaaudrey@gmail.com';
         $user4->password = bcrypt('password');
         $user4->confirmationpassword = bcrypt('password');

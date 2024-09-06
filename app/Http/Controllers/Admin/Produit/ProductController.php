@@ -24,32 +24,32 @@ public function create(){
 }
 
 
-// public function store(Request $request)
-// {
-//             $imageBaselink='/images/produit/';
-//         if ($request->hasFile('photo')) {
-//         $file= $request->file('photo');
-//         $filename =$file->getClientOriginalName();
-//         $extension =$file->getClientOriginalExtension();
-//         $nouveauNomFichier=(string) Str::uuid() . "." . strtolower($extension);
-//         $file->storeAs('public/images/produit/', $nouveauNomFichier);
+public function store(Request $request)
+{
+            $imageBaselink='/images/produit/';
+        if ($request->hasFile('photo')) {
+        $file= $request->file('photo');
+        $filename =$file->getClientOriginalName();
+        $extension =$file->getClientOriginalExtension();
+        $nouveauNomFichier=(string) Str::uuid() . "." . strtolower($extension);
+        $file->storeAs('public/images/produit/', $nouveauNomFichier);
 
-//         $produit = new Produit;
+        $produit = new Produit;
 
-//         $produit->nom = $request->nom;
-//         $produit->categorie_id = $request->input('categorie_id');
-//         $produit->prix = $request->input('prix');
-//         $produit->description = $request->input('description');
-//         $produit->photo=$imageBaselink.''.$nouveauNomFichier;
-//         $produit->save();
+        $produit->nom = $request->nom;
+        $produit->categorie_id = $request->input('categorie_id');
+        $produit->prix = $request->input('prix');
+        $produit->description = $request->input('description');
+        $produit->photo=$imageBaselink.''.$nouveauNomFichier;
+        $produit->save();
 
-//         return redirect()->route('produit.index')->with('success', 'Le produit a été enregistré avec succès.');
-//     }
-//     else {
-// return redirect()->back()->with('error_msg', 'Veuillez sélectionner une image.');
-// }
+        return redirect()->route('produit.index')->with('success', 'Le produit a été enregistré avec succès.');
+    }
+    else {
+return redirect()->back()->with('error_msg', 'Veuillez sélectionner une image.');
+}
 
-// }
+}
 
 
 public function show($id)

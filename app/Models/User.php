@@ -56,4 +56,14 @@ class User extends Authenticatable
         return $this->hasOne(Cart::class);
     }
 
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isUser()
+    {
+        return $this->role === 'user'; 
+    }
+
 }

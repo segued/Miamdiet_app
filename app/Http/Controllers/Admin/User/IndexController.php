@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        $temoignages = Temoignage::all();
-        return view('Client.userinterface.index', compact('temoignages'));
+        $temoignage = Temoignage::all();
+        return view('Client.userinterface.index', compact('temoignage'));
     }
 
 }

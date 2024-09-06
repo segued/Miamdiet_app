@@ -41,93 +41,77 @@ use App\Http\Controllers\Admin\User\MessageController;
 use App\Http\Controllers\Admin\User\ProduitparcategorieController;
 use App\Http\Controllers\Admin\User\RendezvousController;
 
-Route::get('/', function () {
-    return view ('Client.userinterface.index');
-});
-
-Route::get('/index', [IndexController::class, 'index'])->name('accueil');
-// Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/temoignages',[TemoignageController::class, 'temoignages'])->name('temoignages');
-Route::get('/blog',[BlogController::class, 'index'])->name('blog');
-Route::get('/blogsingle', [BlogSingleController::class, 'index'])->name('blogsingle');
-Route::get('/checkout/{id}', [CheckoutController::class, 'index'])->name('checkout.index');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::get('/shop', [ShopController::class, 'index'])->name('shop');
-Route::get('/singleproduit/{id}', [SingleproduitController::class, 'show'])->name('singleproduit');
-Route::get('/book', [BookController::class, 'vue'])->name('livres');
-Route::get('/service', [ServiceController::class, 'index'])->name('service');
 
 
-Route::get('/store',[ProductController::class, 'store'])->name('Administration.produit.index');
-Route::get('/produitparcategorie', [ProduitparcategorieController::class, 'index'])->name('produitparcategorie');
 
 
+
+Route::get('/', [IndexController::class, 'index'])->name('accueil');
+Route::resource('/register', RegisterController::class);
+Route::get('/register', [RegisterController::class, 'userlist'])->name('register');
+Route::post('/create', [RegisterController::class, 'create'])->name('create');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/traitementlogin', [AuthController::class, 'handle'])->name('traitementlogin');
-
 Route::get('/resset', [RessetpasswordController::class, 'index'])->name('resset');
 Route::put('/update', [RessetpasswordController::class, 'update'])->name('update');
 
-Route::resource('/register', RegisterController::class);
-Route::resource('/message', MessageController::class);
-Route::get('/register', [RegisterController::class, 'userlist'])->name('register');
-Route::post('/create', [RegisterController::class, 'create'])->name('create');
 
-
-Route::resource('produit', ProductController::class);
-Route::resource('category', CategoryController::class);
-Route::get('/categorie/{id}/produit', [ProductController::class, 'produitparcategorie'])->name('produitparcategorie');
-
-
-Route::resource('creneau', CreneauController::class);
-// Route::post('prendreRdv',[CreneauController::class, 'prendreRdv'])->name('prendreRdv');
-Route::resource('book', BookController::class);
-Route::resource('livre', LivreController::class);
-
-
-
-Route::middleware('auth')->group(function (){
-
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('/monpanier', [CheckoutController::class, 'afficherPanier'])->name('afficherPanier');
+    Route::get('/checkout/{id}', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::get('/planifierRdv', [RendezvousController::class, 'planifierRdv']);
+    Route::post('/ValiderCommande', [CommandeController::class, 'ValiderCommande'])->name('ValiderCommande');
+    Route::post('procederpaiment/{id}', [CommandeController::class, 'procederpaiment'])->name('procederpaiment');
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
     Route::post('/cart/book', [CartController::class, 'add_book_to_cart'])->name('cart.book');
-    // Route::put('/cart/increase-quantity/{rowId}', [CartController::class, 'increase_cart_quantity'])->name('cart.qty.increase');
-    // Route::put('/cart/decrease-quantity/{rowId}', [CartController::class, 'decrease_cart_quantity'])->name('cart.qty.decrease');
-    // Route::delete('/cart/remove/{rowId}',[CartController::class,'remove_item'])->name('cart.remove.item');
     Route::delete('/cart/supprimer/{rowId}', [CartController::class, 'remove'])->name('cart.remove.item');
     Route::delete('/cart/clear', [CartController::class, 'clear'])->name('cart.clear.item');
-    // Route::delete('/cart/clear',[CartController::class,'empty_cart'])->name('cart.clear');
+    Route::resource('commande', CommandeController::class);
+
+});
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/singleproduit/{id}', [SingleproduitController::class, 'show'])->name('singleproduit');
+Route::get('/produitparcategorie', [ProduitparcategorieController::class, 'index'])->name('produitparcategorie');
+Route::resource('/message', MessageController::class);
+Route::resource('livre', LivreController::class);
+Route::get('/service', [ServiceController::class, 'index'])->name('service');
 
 
+
+
+
+
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+
+    Route::resource('produit', ProductController::class);
+    Route::get('/categorie/{id}/produit', [ProductController::class, 'produitparcategorie'])->name('produitparcategorie');
+    Route::resource('category', CategoryController::class);
+    Route::get('/store', [ProductController::class, 'store'])->name('Administration.produit.index');
+    Route::resource('book', BookController::class);
     Route::resource('rdv', RendezvousController::class);
-    Route::get('/planifierRdv', [RendezvousController::class, 'planifierRdv']);
-
-
-    Route::get('/monpanier', [CheckoutController::class, 'afficherPanier'])->name('afficherPanier');
-
-
-
-
     Route::resource('temoignage', TemoignageController::class);
     Route::resource('user', UserController::class);
-    Route::get('/client', [UserController::class, 'client'])->name('client');
     Route::resource('Userdashboard', UserdashboardController::class);
     Route::resource('gestionnaire', GestionnaireController::class);
-    Route::resource('commande', CommandeController::class);
-    Route::post('/ValiderCommande', [CommandeController::class, 'ValiderCommande'])->name('ValiderCommande');
-    Route::get('stockage', [CommandeController::class, 'stockage'])->name('stockage');
+    // Route::resource('commande', CommandeController::class);
     Route::get('rendezvous', [CommandeController::class, 'rendezvous'])->name('rendezvous');
-    Route::post('procederpaiment/{id}', [CommandeController::class, 'procederpaiment'])->name('procederpaiment');
+    Route::resource('user', UserController::class);
+    Route::get('/client', [UserController::class, 'client'])->name('client');
+
 
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/panier', [DashboardController::class, 'panier'])->name('panier');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-
 });
 
 
 
-Route::middleware(['auth'])->group(function(){
-
-
-});
+Route::resource('/register', RegisterController::class);
+Route::get('/register', [RegisterController::class, 'userlist'])->name('register');
+Route::post('/create', [RegisterController::class, 'create'])->name('create');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

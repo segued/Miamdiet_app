@@ -230,7 +230,8 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($temoignages as $temoignage)
+                @if(!empty($temoignage))
+                @foreach ($temoignage as $temoignage)
                     <div class="col-md-3 ftco-animate">
                         <div class="product shadow">
                             <img class="img-fluid" src="{{ asset('storage' . $temoignage->image) }}" alt="Image du produit">
@@ -241,6 +242,7 @@
                         </div>
                     </div>
                 @endforeach
+                @endif
             </div>
         </div>
     </section>

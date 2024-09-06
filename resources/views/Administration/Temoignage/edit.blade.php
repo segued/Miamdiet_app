@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description" value="{{old('description', $temoignage->description)}}"
+                                <textarea class="form-control"  id="description" name="description"  value="{{old('description', $temoignage->description)}}"
                                     style="height: 100px"></textarea>
                                 <label for="description">Description</label>
                             </div>
