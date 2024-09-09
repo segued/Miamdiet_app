@@ -2,7 +2,7 @@
 
     @include('layout.navbar')
 
-    <div class="hero-wrap hero-bread" style="background-image: url({{ asset('miamdiet/images/category-11.jpg') }});">
+    <div class="hero-wrap hero-bread" style="background-image: url({{ asset('miamdiet/images/category-12.jpg') }});">
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
@@ -20,11 +20,11 @@
 
             <div class="row">
                 <div class="col-lg-6 mb-5 ftco-animate">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset($produit->image) }}" alt="Colorlib Template"></a>
+                    <a href="{{ asset($produit->image) }}" class="img-prod"><img class="img-fluid" src="{{ asset($produit->image) }}" alt="Colorlib Template"></a>
                 </div>
                 <div class="col-lg-6 product-details pl-md-5 ftco-animate">
                     <h1><strong>{{ $produit->nom }}</strong></h1>
-                    <div class="rating d-flex">
+                    {{-- <div class="rating d-flex">
                         <p class="text-left mr-4">
                             <a href="#" class="mr-2">5.0</a>
                             <a href="#"><span class="ion-ios-star-outline"></span></a>
@@ -41,7 +41,7 @@
                             <a href="#" class="mr-2" style="color: #000;">500 <span
                                     style="color: #bbb;">Sold</span></a>
                         </p>
-                    </div>
+                    </div> --}}
 
                     <p class="price"><span>{{ $produit->prix }} <small>fcfa</small></span></p>
                     <p>{{ $produit->description }}</p>

@@ -71,6 +71,7 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::resource('commande', CommandeController::class);
 
 });
+Route::get('/categorie/{id}/produit', [ProductController::class, 'produitparcategorie'])->name('produitcategorie');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
@@ -90,7 +91,6 @@ Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::resource('produit', ProductController::class);
-    Route::get('/categorie/{id}/produit', [ProductController::class, 'produitparcategorie'])->name('produitparcategorie');
     Route::resource('category', CategoryController::class);
     Route::get('/store', [ProductController::class, 'store'])->name('Administration.produit.index');
     Route::resource('book', BookController::class);

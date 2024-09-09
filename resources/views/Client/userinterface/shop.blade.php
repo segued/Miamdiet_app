@@ -14,6 +14,8 @@
             </div>
         </div>
     </div>
+
+
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -21,7 +23,7 @@
                     <ul class="product-category">
                         <li><a href="#" class="active mb-3">Tous</a></li>
                         @foreach ($categories as $categorie)
-                            <li><a href="{{ route('produitparcategorie', $categorie->id) }}"
+                            <li><a href="{{ route('produitcategorie', $categorie->id) }}"
                                     class=" mb-">{{ $categorie->libelle }}</a></li>
                         @endforeach
                     </ul>
@@ -66,7 +68,7 @@
                                     <input type="hidden" name="quantity" value="1" min="1"
                                         class="form-label ml-4" id="qty">
                                 </div>
-                                <div>
+                                <div class="text-center">
                                     <input type="submit" class="btn btn-primary py-3 px-5 m-2"
                                         value="Ajouter au panier"></input>
                                 </div>
